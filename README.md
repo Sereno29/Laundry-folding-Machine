@@ -6,35 +6,61 @@ _Máquina dobradora de roupa_
   <img src="Videos/folding_tshirt_example.gif" width="600">
 </p>
 
-## Exemplos no mercado
+## Exemplos
+
+Durante a implementação do projeto, foram tomados como exemplos de tal produto já no mercado, as seguintes máquinas:
+
+[_Speedy Tee T-Shirt - Chiossi e Cavazzuti_](https://www.youtube.com/watch?v=gGlLr4Ftdfc&feature=youtu.be)
+
+<p align="center">
+  <img src="Photos/Conceptual Project/speedytshirt.jpg" width="600">
+</p>
+
+[_FoldiMate_](https://www.youtube.com/watch?v=qHljT48dz-U&feature=emb_title)
+
+<p align="center">
+  <img src="Photos/Conceptual Project/FoldiMate.jpg" width="600">
+</p>
+
+Outro exemplo de máquina encontrado foi um da filosofia DIY (Do It Yourself) mostrada no seguinte [vídeo](https://www.youtube.com/watch?v=gzCHk0JZ2hY), utilizando marcenaria para tanto. O modo mais simples seria utilizar papelão e fazer como na imagem abaixo:
+
+<p align="center">
+  <img src="Photos/Conceptual Project/dyiFoldingTshirt.jpg" width="600">
+</p>
 
 ## Lista de componentes
 
 ### Eletrônica
 
-- [Arduino Uno R3 ATmega328P Development Board With Boot Loader](https://www.robocore.net/placa-arduino/placa-uno-r3-com-cabo-usb-para-arduino)
-- [Módulo Bluetooth Low Energy - HC-08](https://www.robocore.net/bluetooth/modulo-bluetooth-low-energy-hc-08)
-- Cinco (5x) [Motores de Vidro Elétrico Universal Mabuchi](https://www.connectparts.com.br/motor-mabuchi-vidro-eletrico-dianteira-traseira-mabushi-13927/p)
-- Dobradiças metálicas
-- Parafusos para madeira
-- Duas (2x) [PCBs ilhadas 5 x 10 cm](https://www.robocore.net/placa-circuito/pcb-ilhada-5x10cm)
+- Arduino Uno R3 ATmega328P Development Board With Boot Loader
+- Módulo Bluetooth Low Energy - HC-08
+- Duas (2x) PCBs ilhadas 5 x 10 cm
+- 5 (5x) Transistores MOSFET IRFZ34 (NPN)
+- Fonte Chaveada 12V
 - Botão
 - Conectores
-- [Fonte Chaveada 5V](https://www.robocore.net/fonte/fonte-chaveada-5v-1a)
+- Resistores de 220Ω e 10kΩ
+- Adaptadores
 - Jumpers
 - Cabos flexíveis de várias cores
 - LEDs
-- Transistores MOSFET IRFZ34
 
 ### Estrutura Física e Mecanismos
 
-- Engrenagens feitas utilizando impressão 3D
+- Engrenagens e catraca feitas utilizando impressão 3D
 - Estrutura física do projeto e mecanimos utilizando MDF e madeiras compensadas
+- Dobradiças metálicas
+- Parafusos de madeira e parafusos Allen
 - Borracha EVA
+- Cola
+
+### Motores
+
+- Cinco (5x) Motores de Vidro Elétrico Universal Mabuchi
 
 ### Ferramentas
 
-- [Kit Solda (Ferro de Solda, Estanho para solda, Suporte para Ferro de Solda, Sugador de Solda)](https://www.robocore.net/ferramentas/kit-solda-110v)
+- Kit Solda (Ferro de Solda, Estanho para solda, Suporte para Ferro de Solda, Sugador de Solda)
 - Furadeira de Bancada
 - Furadeira
 - Morsa
@@ -42,11 +68,47 @@ _Máquina dobradora de roupa_
 - Brocas
 - Fura-copo
 - Arco de Serra
-- [Micro Retífica - DREMEL](https://www.lojadomecanico.com.br/produto/75179/21/226/micro-retifica-3000-velocidade-variavel-110v-com-10-acessorios-dremel-f0130300)
+- Micro Retífica - DREMEL
 
 ## Histórico de Desenvolvimento
 
-# Mechatronic Project I (English)
+### Fase Conceitual
+
+Inicialmente, cumprindo o cronograma da disciplina, o grupo focou seus esforços em pensar conceitualmente em como solucionar o problema de dobrar roupas objetivamente. Foram vistos vários estilos/métodos ortodoxos de dobrar roupas e verificada a inviabilidade de implementar alguns destes devido à complexidade de implementação. Um exemplo destes seria a seguinte maneira de dobrar uma camisa.
+
+<p align="center">
+  <img src="Videos/dobrar camiseta em 5 seg.gif" width="600">
+</p>
+
+O grupo optou, portanto, por seguir sua implementação na direção de uma solução padrão e parecida com a utilizada pela empresa Chiossi e Cavazzuti.
+
+Ainda nesta fase do projeto, já se pensou a respeito dos mecanismos envolvidos para transformar o movimento rotativo de nosso motor para movimentar uma aba feita de madeira. Chegou-se a conclusão que um mecanismo de 4 barras como o ilustrado abaixo seria o suficiente para reproduzir o movimento de dobrar camisetas de manga curta. Pode-se considerar que a aba de dobrar roupas seria representada pela barra de cor azul, tendo um deslocamento de aproximadamente 90° ao longo de uma rotação completa do motor.
+
+<p align="center">
+  <img src="Videos/4 barras_animacao.gif" width="600">
+</p>
+
+Por fim, foi feito um modelo em CAD retratando de maneira ainda superficial a estrutura física da máquina. Como pode-se observar na imagem abaixo, a amplitude de movimento para dobrar camisas de manga longa superaria mais do que 90° e portanto não poderia ser utilizado um mecanismo de 4 barras para tal operação. Nesta fase do projeto, esta decisão ainda estava em aberto.
+
+<p align="center">
+  <img src="Photos/Conceptual Project/Dobrador furado_cotado.png" width="600">
+</p>
+
+### Projeto do Sistema
+
+### Protótipo Mecânico
+
+Verificada a maneira que gostaríamos de dobrar a roupas, o próximo passo seria fazer a estrutura física da máquina. Devido ao fato do projeto envolver a elaboração de um protótipo, o grupo optou por fazer a estrutura da máquina utilizando madeiras do tipo MDF, devido a sua versatilidade, fácil manuseio e rápida obtenção. Nesta fase do projeto, o grupo gostaria de agradecer imensamente à marcenaria da USP por toda a hospitabilidade e disponibilidade de nos ajudar a fazer todas as peças necessárias para o projeto. Gostaríamos de agradecer em especial ao Jeremias, responsável pela marcenaria, por toda a ajuda e contribuição para o projeto. Sem este apoio, o sucesso e a viabilidade do projeto teriam sido comprometidos significativamente. Muito obrigado!
+
+<p align="center">
+  <img src="Photos/Physical Structure/Marcenaria USP.jpg" width="500">
+</p>
+
+### Sistema Interface Homem-Máquina (IHM)
+
+### Apresentação Final
+
+# Project of Mechatronic Systems I (English)
 
 _Laundry Folding Machine_
 
@@ -67,12 +129,12 @@ The project had the aim to challenge the the students to implement a real projec
 - Electronics
 - C/C++ Programming
 
-## Examples in the market
+## Examples
 
 ## Components - _Bill of Materials_
 
-- [Arduino Uno R3 ATmega328P Development Board With Boot Loader](https://www.walmart.com/ip/UNO-R3-ATmega328P-Development-Board-With-Boot-Loader-For-Arduino-UNO-UNO-R3-ATmega328P-5V-Development-Board/498774691?wmlspartner=wlpa&selectedSellerId=16214&&adid=22222222227259653842&wl0=&wl1=g&wl2=c&wl3=463068347993&wl4=pla-560122688078&wl5=2840&wl6=&wl7=&wl8=&wl9=pla&wl10=120798572&wl11=online&wl12=498774691&veh=sem)
-- [Bluetooth Low Energy Module - HC-08](https://www.walmart.ca/en/ip/DSD-TECH-SH-HC-08-Bluetooth-4-0-BLE-Slave-Module-to-UART-Transceiver-for-Arduino-Compatible-with-iOS/PRD4RYHXP427MZP)
+- Arduino Uno R3 ATmega328P Development Board With Boot Loader
+- Bluetooth Low Energy Module - HC-08
 - Metallic hinges
 - Wood Screws
 - PCB 5 x 10 cm
@@ -102,7 +164,7 @@ _Final Product_
 
 ## Desenvolvedores/Developers
 
-- [Isaak Machado]()
+- [Isaak Machado](https://github.com/Isaakns)
 - [Leonardo Felipe L. S. dos Santos](https://github.com/qleonardolp)
 - [Matheus de Souza Sereno](https://github.com/Sereno29)
 - [Victor Tamassia Nopeney](https://github.com/Vtn21)
